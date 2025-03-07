@@ -1,13 +1,20 @@
-import Navbar from "./Components/Header";
-import Intro from "./Components/Intro";
-import TechStack from "./Components/TechStack";
+'use client'
+import Contact from "@/components/Contact";
+import Header from "@/components/Header";
+import Intro from "@/components/Intro";
+import Projects from "@/components/Projects";
+import TechStack from "@/components/TechStack";
 
-export default function Home() {
+function App() {
   return (
-    <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_25%,#07073a_100%)]">
-      <Navbar />
+    <>
+      <Header />
       <Intro />
       <TechStack />
-    </div>
+      <Projects />
+      <Contact/>
+    </>
   );
 }
+
+export default App;
