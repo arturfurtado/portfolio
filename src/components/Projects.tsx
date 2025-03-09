@@ -1,38 +1,48 @@
-'use client';
-import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
-import gsap from 'gsap';
-import Project from './Project';
+"use client";
+import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import Project from "./Project";
 
 const projects = [
   {
     id: 1,
-    title: 'URL Shortener',
-    src: 'urlshortener.png',
-    color: '#00042f',
-    link: 'https://github.com/arturfurtado/url-shortener'
+    title: "URL Shortener",
+    src: "urlshortener.png",
+    color: "#00042f",
+    link: "https://github.com/arturfurtado/url-shortener",
   },
   {
     id: 2,
-    title: 'URL Shortener',
-    src: 'urlshortener.png',
-    color: '#000220',
-    link: 'https://github.com/arturfurtado/url-shortener'
+    title: "URL Shortener",
+    src: "urlshortener.png",
+    color: "#000220",
+    link: "https://github.com/arturfurtado/url-shortener",
   },
   {
     id: 3,
-    title: 'URL Shortener',
-    src: 'urlshortener.png',
-    color: '#000000',
-    link: 'https://github.com/arturfurtado/url-shortener'
-  }
+    title: "URL Shortener",
+    src: "urlshortener.png",
+    color: "#000000",
+    link: "https://github.com/arturfurtado/url-shortener",
+  },
 ];
 
 const scaleAnimation = {
   initial: { scale: 0, x: "-50%", y: "-50%" },
-  enter: { scale: 1, x: "-50%", y: "-50%", transition: { duration: 1, ease: [0.76, 0, 0.24, 1] } },
-  closed: { scale: 0, x: "-50%", y: "-50%", transition: { duration: 1, ease: [0.32, 0, 0.67, 0] } }
+  enter: {
+    scale: 1,
+    x: "-50%",
+    y: "-50%",
+    transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+  },
+  closed: {
+    scale: 0,
+    x: "-50%",
+    y: "-50%",
+    transition: { duration: 1, ease: [0.32, 0, 0.67, 0] },
+  },
 };
 
 export default function Projects() {
@@ -50,12 +60,30 @@ export default function Projects() {
   const yMoveCursorLabel = useRef<((value: number) => void) | null>(null);
 
   useEffect(() => {
-    xMoveContainer.current = gsap.quickTo(modalContainer.current, "left", { duration: 0.8, ease: "power3" });
-    yMoveContainer.current = gsap.quickTo(modalContainer.current, "top", { duration: 0.8, ease: "power3" });
-    xMoveCursor.current = gsap.quickTo(cursor.current, "left", { duration: 0.5, ease: "power3" });
-    yMoveCursor.current = gsap.quickTo(cursor.current, "top", { duration: 0.5, ease: "power3" });
-    xMoveCursorLabel.current = gsap.quickTo(cursorLabel.current, "left", { duration: 0.45, ease: "power3" });
-    yMoveCursorLabel.current = gsap.quickTo(cursorLabel.current, "top", { duration: 0.45, ease: "power3" });
+    xMoveContainer.current = gsap.quickTo(modalContainer.current, "left", {
+      duration: 0.8,
+      ease: "power3",
+    });
+    yMoveContainer.current = gsap.quickTo(modalContainer.current, "top", {
+      duration: 0.8,
+      ease: "power3",
+    });
+    xMoveCursor.current = gsap.quickTo(cursor.current, "left", {
+      duration: 0.5,
+      ease: "power3",
+    });
+    yMoveCursor.current = gsap.quickTo(cursor.current, "top", {
+      duration: 0.5,
+      ease: "power3",
+    });
+    xMoveCursorLabel.current = gsap.quickTo(cursorLabel.current, "left", {
+      duration: 0.45,
+      ease: "power3",
+    });
+    yMoveCursorLabel.current = gsap.quickTo(cursorLabel.current, "top", {
+      duration: 0.45,
+      ease: "power3",
+    });
   }, []);
 
   const moveItems = (x: number, y: number) => {
@@ -76,17 +104,23 @@ export default function Projects() {
     }
   };
 
-  const manageModal = (active: boolean, index: number, x: number, y: number) => {
+  const manageModal = (
+    active: boolean,
+    index: number,
+    x: number,
+    y: number
+  ) => {
     moveItems(x, y);
     setModal({ active, index });
   };
 
   return (
     <main
-      className="h-screen overflow-y-auto"
+    id="projetos"
+      className="h-full pb-24 overflow-y-auto"
       onMouseMove={(e) => moveItems(e.clientX, e.clientY)}
     >
-      <div className="w-full flex flex-col items-center justify-center mb-[100px] pt-[100px]">
+      <div className="w-full flex flex-col items-center justify-center pt-[100px]">
         {projects.map((project, i) => (
           <Project
             key={project.id}

@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import Rounded from '@/common/RoundedButton'
+import RoundedButton from '@/common/RoundedButton'
 
 const Contact: React.FC = () => {
   const finalText = "Entre em Contato"
@@ -67,11 +67,10 @@ const Contact: React.FC = () => {
 
   return (
     <motion.div 
-      ref={scrollContainer}
-      style={{ y }}
       className="text-white flex flex-col items-center justify-center bg-[#141516] relative"
+    id='contato'
     >
-      <div className="py-[200px] w-full max-w-[1800px] bg-[#141516]">
+      <div className="py-[100px] w-full max-w-[1800px] bg-[#141516]">
         <div ref={animationRef} className="flex w-full justify-center text-3xl font-bold mb-8">
           {displayText}
         </div>
@@ -82,9 +81,9 @@ const Contact: React.FC = () => {
             style={{ x, left: 'calc(100% - 400px)', top: 'calc(100% - 75px)' }}
             className="absolute"
           >
-            <Rounded backgroundColor="#334BD3" className="w-[180px] h-[180px] bg-[#455CE9] text-white rounded-full flex items-center justify-center cursor-pointer">
+            <RoundedButton backgroundColor="#334BD3" className="w-[180px] h-[180px] bg-[#455CE9] text-white rounded-full flex items-center justify-center cursor-pointer">
               <p className="m-0 text-[16px] font-light z-10 relative">Email</p>
-            </Rounded>
+            </RoundedButton>
           </motion.div>
           <motion.svg 
             style={{ rotate, scale: 2 }}
@@ -95,16 +94,16 @@ const Contact: React.FC = () => {
           </motion.svg>
         </div>
         <div className="flex gap-[20px] mt-[100px] mx-[200px]">
-          <Rounded>
+          <RoundedButton backgroundColor="#455CE9">
             <p className="m-0 text-[16px] font-light relative after:content-[''] after:w-0 after:h-[1px] after:bg-white after:block after:mt-[2px] after:left-1/2 after:-translate-x-1/2 after:transition-all after:duration-200 hover:after:w-full">
              artururtado@gmail.com
             </p>
-          </Rounded>
-          <Rounded>
+          </RoundedButton>
+          <RoundedButton backgroundColor="#455CE9">
             <p className="m-0 text-[16px] font-light relative after:content-[''] after:w-0 after:h-[1px] after:bg-white after:block after:mt-[2px] after:left-1/2 after:-translate-x-1/2 after:transition-all after:duration-200 hover:after:w-full">
               +55 (47) 99983-8278
             </p>
-          </Rounded>
+          </RoundedButton>
         </div>
       </div>
     </motion.div>

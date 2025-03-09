@@ -40,6 +40,7 @@ export default function TechStack() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      id='stack'
     >
       {icons.map(({ component: Icon, id }) => (
         <motion.div

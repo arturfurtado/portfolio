@@ -10,7 +10,7 @@ function App() {
     <>
       <Header />
       <Intro />
-      <TechStack />
+      <TechStack/>
       <Projects />
       <Contact/>
     </>

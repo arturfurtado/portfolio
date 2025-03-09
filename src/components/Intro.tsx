@@ -3,12 +3,14 @@ import React from "react";
 
 export default function Intro() {
   return (
-    <main className="flex flex-col z-10 space-y-12 mt-24 justify-center items-center text-center mx-96">
+    <main 
+    id="home"
+    className="flex flex-col z-10 space-y-12 mt-24 justify-center items-center text-center mx-96">
       <Image className="" src="/cropped_image.png" width={300} height={300} alt="foto" quality={100}/>
-      <h1 className="text-transparent bg-clip-text text-6xl bg-gradient-to-l from-white to-[#07073a]">
+      <h1 className="text-6xl">
         Artur Furtado
       </h1>
-      <h3 className="text-transparent bg-clip-text text-3xl bg-gradient-to-l from-white to-[#07073a]">
+      <h3 className="text-3xl">
         Desenvolvedor Web
       </h3>
       <div className="text-xl mx-[25vh]">
