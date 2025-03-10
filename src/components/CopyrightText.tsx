@@ -9,7 +9,7 @@ function CopyrightText() {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="cursor-pointer select-none font-bold"
+      className="cursor-pointer select-none font-bold hidden md:flex"
     >
       <AnimatePresence mode="wait">
         {hovered ? (

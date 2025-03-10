@@ -3,8 +3,8 @@ import React from "react";
 const ReactIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg
     className={className}
-    width="96"
-    height="96"
+        className={`w-14 h-14 md:w-24 md:h-24 ${className}`}
+
     viewBox="0 0 128 128"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"

@@ -31,7 +31,7 @@ export default function RoundedButton({ children, backgroundColor, ...attributes
         onMouseEnter={manageMouseEnter}
         onMouseLeave={manageMouseLeave}
         {...attributes}
-        className="group relative flex items-center justify-center py-[15px] px-[60px] border border-[#888888] rounded-[3em] cursor-pointer overflow-hidden"
+        className="group relative flex items-center justify-center md:py-[15px] md:px-[60px] border border-[#888888] rounded-[3em] cursor-pointer overflow-hidden"
       >
         {React.isValidElement(children) ? (
           React.cloneElement(children, {

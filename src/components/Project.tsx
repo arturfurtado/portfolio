@@ -10,7 +10,7 @@ interface ProjectProps {
 
 export default function index({ index, title, link, manageModal }: ProjectProps) {
   return (
-    <figure className="px-48 w-full">
+    <figure className="w-full px-8 md:px-48 ">
       <div
         className="w-full border-t border-t-gray-200 border-b border-b-gray-200 py-16 cursor-pointer"
         onMouseEnter={(e) => {
@@ -21,8 +21,8 @@ export default function index({ index, title, link, manageModal }: ProjectProps)
         }}
       >
         <a target="_blank" href={link}>
-        <h2 className="text-3xl">{title}</h2>
-        <p className="text-xl">Desenvolvimento</p>
+        <h2 className="text-xl md:text-3xl">{title}</h2>
+        <p className="text-lg md:text-xl">Desenvolvimento</p>
         </a>
       </div>
     </figure>
